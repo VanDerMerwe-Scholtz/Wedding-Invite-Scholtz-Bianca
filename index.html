@@ -1,159 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Our Wedding</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f3ec" />
+  <title>Scholtz & Bianca | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg:#f7f3ec; --ink:#30372e; --muted:#667060; --accent:#8b785c; --line:#ded7c9; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:'DM Sans',Arial,sans-serif; line-height:1.65; }
+    .screen { min-height:100svh; display:flex; align-items:center; justify-content:center; padding:24px; }
+    .panel { width:min(100%,660px); padding:clamp(30px,7vw,75px); text-align:center; background:#fffdf8; border:1px solid var(--line); box-shadow:0 14px 50px #302b1c12; position:relative; }
+    .panel::before { content:''; position:absolute; inset:9px; border:1px solid #e9e2d5; pointer-events:none; }
+    .overline { color:var(--accent); letter-spacing:.26em; text-transform:uppercase; font-size:.72rem; font-weight:600; }
+    h1,h2 { font-family:'Cormorant Garamond',Georgia,serif; font-weight:500; line-height:1.05; }
+    h1 { font-size:clamp(3.3rem,11vw,6rem); margin:24px 0; }
+    h2 { font-size:clamp(2.5rem,7vw,4rem); margin:14px 0; }
+    .amp { font-style:italic; color:var(--accent); font-size:.7em; }
+    .ornament { font-family:Georgia,serif; color:var(--accent); font-size:28px; margin:20px 0; }
+    input { width:100%; max-width:320px; padding:14px 16px; border:1px solid #c8bdac; border-radius:3px; font:inherit; background:white; }
+    button,.button { display:inline-block; border:1px solid var(--ink); padding:12px 26px; background:var(--ink); color:white; font:600 .79rem 'DM Sans',Arial,sans-serif; text-decoration:none; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; margin:10px 6px; border-radius:2px; }
+    button:hover,.button:hover { background:#596350; }
+    .button.secondary { background:transparent; color:var(--ink); }
+    .button.secondary:hover { background:#f0ece4; }
+    .error { color:#a23d3d; min-height:24px; font-size:.87rem; }
+    #invitation { display:none; }
+    .hero { padding-top:75px; padding-bottom:75px; }
+    .section { width:min(100% - 36px,750px); margin:0 auto; padding:55px 20px; text-align:center; border-bottom:1px solid var(--line); }
+    .section p { max-width:580px; margin:16px auto; }
+    .details { font-size:1.08rem; }
+    .date { letter-spacing:.16em; text-transform:uppercase; font-size:.94rem; color:var(--accent); font-weight:600; }
+    footer { padding:42px 15px; text-align:center; color:var(--muted); font-size:.82rem; }
+  </style>
 </head>
-
 <body>
-
-<!-- PASSWORD SCREEN -->
-<div id="password-screen" class="password-screen">
-    <div class="password-box">
-
-        <h1>You're Invited</h1>
-
-        <p>Please enter the password on your invitation.</p>
-
-        <input
-            type="password"
-            id="password"
-            placeholder="Password"
-        >
-
-        <button onclick="checkPassword()">
-            Enter
-        </button>
-
-        <p id="error-message"></p>
-
+  <!-- EDIT THESE 3 JAVASCRIPT SETTINGS NEAR THE BOTTOM: PASSWORD + FORM LINKS -->
+  <main id="gate" class="screen">
+    <div class="panel">
+      <div class="overline">A celebration of love</div>
+      <div class="ornament">❦</div>
+      <h1>Scholtz <span class="amp">&</span> Bianca</h1>
+      <p>You're invited to celebrate our wedding.</p>
+      <p>Please enter the password shared with your invitation.</p>
+      <form id="passwordForm">
+        <label for="password" class="overline" style="display:block;margin:18px 0 10px">Wedding password</label>
+        <input id="password" type="password" autocomplete="off" required placeholder="Enter password" />
+        <div><button type="submit">Open invitation</button></div>
+        <div class="error" id="error" aria-live="polite"></div>
+      </form>
     </div>
-</div>
+  </main>
 
-
-<!-- WEDDING WEBSITE -->
-<div id="wedding-site" class="hidden">
-
-    <!-- HERO -->
-    <section class="hero">
-
-        <div class="overlay">
-
-            <p class="small-title">
-                WE'RE GETTING MARRIED
-            </p>
-
-            <h1>
-                Your Name
-                <span>&</span>
-                Partner's Name
-            </h1>
-
-            <p class="date">
-                00 Month 2027
-            </p>
-
-        </div>
-
+  <main id="invitation">
+    <section class="screen hero">
+      <div class="panel">
+        <div class="overline">Together with our families</div>
+        <div class="ornament">❦</div>
+        <p>With joyful hearts, we invite you to the wedding of</p>
+        <h1>Scholtz <span class="amp">&</span> Bianca</h1>
+        <p class="date">Saturday · 16 October 2027</p>
+        <p>We can't wait to celebrate with you!</p>
+        <div class="ornament">❦</div>
+        <a href="#details" class="button secondary">View the details ↓</a>
+      </div>
     </section>
-
-
-    <!-- WELCOME -->
+    <section id="details" class="section">
+      <div class="overline">The celebration</div>
+      <h2>Our Special Day</h2>
+      <div class="details">
+        <p><strong>Saturday, 16 October 2027</strong></p>
+        <p><strong>Ceremony:</strong> 15:00</p>
+        <p><strong>Venue:</strong> Add your confirmed venue here</p>
+        <p><strong>Dress code:</strong> Add your dress code here</p>
+      </div>
+    </section>
     <section class="section">
-
-        <h2>Ons Trou!</h2>
-
-        <p>
-            Met groot liefde en opgewondenheid nooi ons julle
-            uit om hierdie besondere dag saam met ons te vier.
-        </p>
-
+      <div class="overline">Kindly reply</div>
+      <h2>Will You Join Us?</h2>
+      <p>We would be delighted to celebrate with you. Please let us know whether you can attend.</p>
+      <a id="rsvpLink" class="button" href="#">RSVP here</a>
+      <p><small>RSVP by: Add your RSVP deadline here</small></p>
     </section>
-
-
-    <!-- DETAILS -->
-    <section class="section details">
-
-        <h2>Die Groot Dag</h2>
-
-        <div class="card">
-
-            <h3>Datum</h3>
-
-            <p>
-                Saterdag, 00 Maand 2027
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Tyd</h3>
-
-            <p>
-                15:00
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <h3>Plek</h3>
-
-            <p>
-                Wedding Venue Name
-            </p>
-
-            <p>
-                Gauteng, South Africa
-            </p>
-
-        </div>
-
+    <section class="section">
+      <div class="overline">Let's fill the dance floor</div>
+      <h2>Request a Song</h2>
+      <p>Have a song you'd love to hear? Share your favourite tunes with our DJ.</p>
+      <a id="songLink" class="button secondary" href="#">Suggest a song</a>
     </section>
+    <footer>With love, Scholtz & Bianca ♡</footer>
+  </main>
 
+  <script>
+    // CUSTOMISE THE THREE VALUES BELOW.
+    // IMPORTANT: This browser-side password is only a casual gate, NOT secure access control.
+    // People can inspect this public source code and discover/bypass the password.
+    const WEDDING_PASSWORD = 'CHANGE-ME-2027';
+    const RSVP_FORM_URL = 'https://forms.gle/REPLACE-WITH-YOUR-RSVP-LINK';
+    const SONG_FORM_URL = 'https://forms.gle/REPLACE-WITH-YOUR-SONG-LINK';
 
-    <!-- RSVP -->
-    <section class="section rsvp">
+    document.getElementById('rsvpLink').href = RSVP_FORM_URL;
+    document.getElementById('songLink').href = SONG_FORM_URL;
+    document.getElementById('rsvpLink').target = '_blank';
+    document.getElementById('songLink').target = '_blank';
+    document.getElementById('rsvpLink').rel = 'noopener noreferrer';
+    document.getElementById('songLink').rel = 'noopener noreferrer';
 
-        <h2>RSVP</h2>
-
-        <p>
-            Laat weet ons asseblief voor
-            00 Month 2027 of jy ons spesiale dag
-            saam met ons gaan vier.
-        </p>
-
-        <a
-            href="YOUR-GOOGLE-FORM-LINK"
-            target="_blank"
-            class="button"
-        >
-            RSVP Here
-        </a>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <p>
-            Ons kan nie wag om saam met julle fees te vier nie 🤍
-        </p>
-
-    </footer>
-
-
-</div>
-
-<script src="script.js"></script>
-
+    document.getElementById('passwordForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+      const entered = document.getElementById('password').value;
+      if (entered === WEDDING_PASSWORD) {
+        document.getElementById('gate').style.display = 'none';
+        document.getElementById('invitation').style.display = 'block';
+        window.scrollTo(0, 0);
+      } else {
+        document.getElementById('error').textContent = 'Incorrect password. Please try again.';
+      }
+    });
+  </script>
 </body>
 </html>
