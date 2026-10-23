@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="af">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f7f3ec" />
-  <title>Scholtz & Bianca | Wedding Invitation</title>
+  <title>Scholtz & Bianca | Trou-uitnodiging</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -40,15 +40,15 @@
   <!-- EDIT THESE 3 JAVASCRIPT SETTINGS NEAR THE BOTTOM: PASSWORD + FORM LINKS -->
   <main id="gate" class="screen">
     <div class="panel">
-      <div class="overline">A celebration of love</div>
+      <div class="overline">’n Viering van liefde</div>
       <div class="ornament">❦</div>
       <h1>Scholtz <span class="amp">&</span> Bianca</h1>
-      <p>You're invited to celebrate our wedding.</p>
-      <p>Please enter the password shared with your invitation.</p>
+      <p>Jy word hartlik uitgenooi om ons troudag saam met ons te vier.</p>
+      <p>Voer asseblief die wagwoord in om die uitnodiging oop te maak.</p>
       <form id="passwordForm">
-        <label for="password" class="overline" style="display:block;margin:18px 0 10px">Wedding password</label>
-        <input id="password" type="password" autocomplete="off" required placeholder="Enter password" />
-        <div><button type="submit">Open invitation</button></div>
+        <label for="password" class="overline" style="display:block;margin:18px 0 10px">Trou-wagwoord</label>
+        <input id="password" type="password" autocomplete="off" required placeholder="Tik die wagwoord in" />
+        <div><button type="submit">Maak uitnodiging oop</button></div>
         <div class="error" id="error" aria-live="polite"></div>
       </form>
     </div>
@@ -57,40 +57,40 @@
   <main id="invitation">
     <section class="screen hero">
       <div class="panel">
-        <div class="overline">Together with our families</div>
+        <div class="overline">Saam met ons families</div>
         <div class="ornament">❦</div>
-        <p>With joyful hearts, we invite you to the wedding of</p>
+        <p>Met liefde en groot vreugde nooi ons jou uit na die troue van</p>
         <h1>Scholtz <span class="amp">&</span> Bianca</h1>
-        <p class="date">Saturday · 16 October 2027</p>
-        <p>We can't wait to celebrate with you!</p>
+        <p class="date">Saterdag · 16 Oktober 2027</p>
+        <p>Ons sien daarna uit om hierdie spesiale dag saam met jou te vier!</p>
         <div class="ornament">❦</div>
-        <a href="#details" class="button secondary">View the details ↓</a>
+        <a href="#details" class="button secondary">Sien die besonderhede ↓</a>
       </div>
     </section>
     <section id="details" class="section">
-      <div class="overline">The celebration</div>
-      <h2>Our Special Day</h2>
+      <div class="overline">Ons vier saam</div>
+      <h2>Ons spesiale dag</h2>
       <div class="details">
-        <p><strong>Saturday, 16 October 2027</strong></p>
-        <p><strong>Ceremony:</strong> 15:00</p>
-        <p><strong>Venue:</strong> Add your confirmed venue here</p>
-        <p><strong>Dress code:</strong> Add your dress code here</p>
+        <p><strong>Saterdag, 16 Oktober 2027</strong></p>
+        <p><strong>Seremonie:</strong> 15:00</p>
+        <p><strong>Plek:</strong> Die Ou Melkstal</p>
+        <p><strong>Dragkode:</strong> Netjies informeel (smart casual)</p>
       </div>
     </section>
     <section class="section">
-      <div class="overline">Kindly reply</div>
-      <h2>Will You Join Us?</h2>
-      <p>We would be delighted to celebrate with you. Please let us know whether you can attend.</p>
-      <a id="rsvpLink" class="button" href="#">RSVP here</a>
-      <p><small>RSVP by: Add your RSVP deadline here</small></p>
+      <div class="overline">Laat weet ons asseblief</div>
+      <h2>Kom vier jy saam?</h2>
+      <p>Dit sal vir ons baie beteken as jy die dag saam met ons kan vier. Laat weet asseblief of jy dit kan bywoon.</p>
+      <a id="rsvpLink" class="button" href="#">Bevestig bywoning</a>
+      <p><small>RSVP teen: Voeg die sperdatum hier in</small></p>
     </section>
     <section class="section">
-      <div class="overline">Let's fill the dance floor</div>
-      <h2>Request a Song</h2>
-      <p>Have a song you'd love to hear? Share your favourite tunes with our DJ.</p>
-      <a id="songLink" class="button secondary" href="#">Suggest a song</a>
+      <div class="overline">Kom vul die dansvloer</div>
+      <h2>Stel ’n liedjie voor</h2>
+      <p>Het jy ’n gunstelingliedjie wat jy graag wil hoor? Stuur jou voorstelle vir ons platejoggie (DJ).</p>
+      <a id="songLink" class="button secondary" href="#">Stuur ’n liedjievoorstel</a>
     </section>
-    <footer>With love, Scholtz & Bianca ♡</footer>
+    <footer>Met liefde, Scholtz & Bianca ♡</footer>
   </main>
 
   <script>
@@ -116,7 +116,7 @@
         document.getElementById('invitation').style.display = 'block';
         window.scrollTo(0, 0);
       } else {
-        document.getElementById('error').textContent = 'Incorrect password. Please try again.';
+        document.getElementById('error').textContent = 'Verkeerde wagwoord. Probeer asseblief weer.';
       }
     });
   </script>
